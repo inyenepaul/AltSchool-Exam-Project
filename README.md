@@ -9,21 +9,27 @@ STEP 1: PROVISION AN AWS EC2 INSTANCE
 
 I logged in to AWS Management Console:
 Went to AWS Console.
+
 Launched an EC2 Instance:
 Navigated to the EC2 Dashboard under "Compute."
+
 Clicked on Launch Instance.
+
 Configured the EC2 Instance:
 ![AWS_EC2_launch instance](https://github.com/user-attachments/assets/462d2e80-9458-4e9e-a769-54cd458b99f0)
 
 Name: I entered a name for my instance (Exam_Project).
+
 AMI: Selected an Amazon Machine Image (AMI). Clicked on Ubuntu Server 22.04 LTS.
 ![AWS_EC2_AMI_instance type](https://github.com/user-attachments/assets/ab43a77f-52f8-4414-ae71-e7b8f47d484c)
 
 Instance Type: Choose an instance type (t2.micro, eligible for free tier).
+
 Key Pair: I created a new key pair (examproject). Saved the private key file (.pem) to my computer.
 ![AWS_EC2_key pair setting](https://github.com/user-attachments/assets/c193bd4c-988f-4577-8207-d24b469ead1c)
 
 Network Settings:
+
 Ensured I allowed SSH traffic by selecting "Allow SSH from My IP."
 Added a rule to allow HTTP traffic (port 80) from anywhere.
 ![AWS_EC2_networking setting](https://github.com/user-attachments/assets/2317b936-8f6c-4f57-8a83-6ebaa5018ed9)
