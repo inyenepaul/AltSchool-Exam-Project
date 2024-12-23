@@ -58,57 +58,53 @@ Selected Private Key and upload the .pem key file downloaded during key pair cre
 
 Saved the host configuration.
 Connect to the EC2 Instance:
-
 Clicked on the saved host to connect.
-Accepted the host fingerprint if prompted.
+
 ![Termius_authentication](https://github.com/user-attachments/assets/baf607ae-ce5d-474c-8c87-7151c912e4ca)
+
+Termius terminal is launched
 
 ![Termius_terminal](https://github.com/user-attachments/assets/155f6029-c227-4d7d-8143-60e0b40cdb1e)
 
 
-Step 3: Install Apache2 Web Server
-Update the System: Run the following commands to update the package lists:
+STEP 3: INSTALL APACHE2 WEB SERVER
 
-bash
-Copy code
-sudo apt update
-sudo apt upgrade -y
-Install Apache2: Install the Apache2 web server using:
+Updated the System: Run the following commands to update the package lists:
+sudo apt update -y
 
-bash
-Copy code
+Installed Apache2: Install the Apache2 web server using:
 sudo apt install apache2 -y
-Start and Enable Apache2: Ensure Apache2 starts and is enabled to run on boot:
 
-bash
-Copy code
+Started and Enabled Apache2: Ensured Apache2 starts and is enabled to run on boot:
 sudo systemctl start apache2
 sudo systemctl enable apache2
-Test Apache2 Installation:
 
-Open a browser and visit http://<EC2-Public-IP>.
-You should see the default Apache2 page.
-
-Step 4: Deploy a Simple HTML Page
-Navigate to the Apache2 Web Root:
-
-bash
-Copy code
-cd /var/www/html
-Remove Default Page (Optional): If you want to remove the default Apache2 page:
-
-bash
-Copy code
-sudo rm index.html
-Create an HTML Page from Readme.md:
+Tested Apache2 Installation:
+Opened a browser and visited the public IP address: 54.227.76.174.
+The default Apache2 page will be displayed.
+![APACHE2 WORKING](https://github.com/user-attachments/assets/dc1be4fc-6778-4c35-8648-6fa502fad5ac)
 
 
+Step 4: Deploying my Simple HTML Landing Page
 
-Summary
-You provisioned an AWS EC2 instance.
-Connected to the instance via Termius using SSH.
-Installed the Apache2 web server.
-Deployed an HTML page created from your readme.md file.
-Enjoy your running Linux-based web server!
+Navigated to the Apache2 Web Root:
 
+Created a folder: mkdir altschool_project_exam
+Cd to the file: cd altschool_project_exam
+Copied and installed the GitHub project link: wget https://github.com/inyenepaul/AltSchool-Exam-Project.git
 
+Copied the GitHub zip link: wget https://github.com/inyenepaul/AltSchool-Exam-Project/archive/refs/heads/main.zip
+
+Installed unzip: apt install unzip
+Unzipped the zip file: unzip main.zip
+
+cd to the folder: AltSchool-Exam-Project-main
+
+Moved the folder to the server: mv * /var/www/html/
+Cd to the path: cd /var/www/html/
+
+Checked the status of apache2: systemctl status apache2
+Enabled apache2: systemctl enable apache2
+Started apache2: systemctl start apache2
+
+Reloaded the public IP address (54.227.76.174) in the browser: The landing page is displayed
