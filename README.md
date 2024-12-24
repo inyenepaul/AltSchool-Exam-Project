@@ -1,21 +1,21 @@
 THE STEP-BY-STEP PROCESS FOR PROVISIONING A LINUX SERVER WITH A SIMPLE HTML PAGE
 
-The Public IP address for my landing page is 54.227.76.174
+The URL for my HTML landing page is https://www.inyenepaul.me/
 
-![Screenshot of HTML page in browser](https://github.com/user-attachments/assets/d1740e69-7c08-4f13-9b24-2de2bc2ddc3a)
+![My HTML landing page with HTTPS protocol](https://github.com/user-attachments/assets/b729e488-0c28-4d93-8f91-9e8a8d2e3716)
+
 
 
 STEP 1: PROVISION AN AWS EC2 INSTANCE
 
-I logged in to AWS Management Console:
-Went to AWS Console.
+a. I logged in to AWS Management Console
 
-Launched an EC2 Instance:
-Navigated to the EC2 Dashboard under "Compute."
+b. Launched an EC2 Instance:
+  Navigated to the EC2 Dashboard under "Compute."
 
-Clicked on Launch Instance.
+c. Clicked on Launch Instance.
 
-Configured the EC2 Instance:
+d. Configured the EC2 Instance:
 ![AWS_EC2_launch instance](https://github.com/user-attachments/assets/462d2e80-9458-4e9e-a769-54cd458b99f0)
 
 Name: I entered a name for my instance (Exam_Project).
@@ -37,21 +37,21 @@ Added a rule to allow HTTP traffic (port 80) from anywhere.
 Storage: I left the default storage or adjusted it as needed.
 ![AWS_EC2_storage setting](https://github.com/user-attachments/assets/e33e1e57-ce2d-42d3-9ad0-d20f70938460)
 
-Clicked Launch Instance.
+e. Clicked Launch Instance.
 ![AWS_EC2_launched instance successfully](https://github.com/user-attachments/assets/97e17202-5a00-4e79-a548-2f0779e92d3d)
 
-Got the Public IP Address:
-Once the instance is running, I go to the EC2 dashboard and copy the Public IPv4 address (54.227.76.174).
+f. Got the Public IP Address:
+Once the instance runs, I go to the EC2 dashboard and copy the Public IPv4 address (54.227.76.174).
 ![AWS_EC2 INSTANCE_dashboard](https://github.com/user-attachments/assets/7cfac95f-f931-4768-8903-bdb1bd4b3374)
 
 
 STEP 2: CONFIGURE TERMIUS FOR SSH CONNECTION
 
-Installed Termius:
-Downloaded and installed Termius from the Termius Website.
+a. Installed Termius:
+    Downloaded and installed Termius from the Termius Website.
 
-Added a New Host:
-Opened Termius and clicked on New Host.
+b. Added a New Host:
+I opened Termius and clicked on New Host.
 Host: Entered the EC2 instance's public IP address.
 ![Termius_Added new host](https://github.com/user-attachments/assets/518b06b7-f397-44c1-b3dd-bb90f0c3d44c)
 
@@ -59,72 +59,95 @@ User: Used ubuntu (default username for Ubuntu).
 ![Termius_Username](https://github.com/user-attachments/assets/32a2f539-685c-4216-82d4-0dab20d0f3ef)
 
 Authentication:
-Selected Private Key and uploaded the .pem key file downloaded during key pair creation.
+I selected Private Key and uploaded the .pem key file downloaded during key pair creation.
 ![Termius_key pair](https://github.com/user-attachments/assets/0c43b120-2a24-4344-89cf-91961c3a9eb8)
 
-Saved the host configuration.
+c. Saved the host configuration.
 
-Connected to the EC2 Instance:
+d. Connected to the EC2 Instance:
 
-Clicked on the saved host to connect.
+  Clicked on the saved host to connect.
 
 ![Termius_authentication](https://github.com/user-attachments/assets/baf607ae-ce5d-474c-8c87-7151c912e4ca)
 
-Termius terminal is launched
+e. Termius terminal is launched
 
 ![Termius_terminal](https://github.com/user-attachments/assets/155f6029-c227-4d7d-8143-60e0b40cdb1e)
 
 
 STEP 3: INSTALLED APACHE2 WEB SERVER
 
-Updated the System: Ran the following commands to update the package lists:
+a. Updated the System: Ran the following commands to update the package lists:
 
-sudo apt update -y
+  sudo apt update -y
 
-Installed Apache2: Installed the Apache2 web server using:
+b. Installed Apache2: Installed the Apache2 web server using:
 
-sudo apt install apache2 -y
+  sudo apt install apache2 -y
 
-Started and Enabled Apache2: Ensured Apache2 starts and is enabled to run on boot:
+c. Started and Enabled Apache2: Ensured Apache2 starts and is enabled to run on boot:
 
-sudo systemctl start apache2
+  sudo systemctl start apache2
 
-sudo systemctl enable apache2
+  sudo systemctl enable apache2
 
-Tested Apache2 Installation:
+d. Tested Apache2 Installation:
 
-Opened a browser and visited the public IP address: 54.227.76.174.
+  I opened a browser and visited the Public IP address (54.227.76.174)
 
-The default Apache2 page will be displayed.
+e. The default Apache2 page will be displayed.
 ![APACHE2 WORKING](https://github.com/user-attachments/assets/dc1be4fc-6778-4c35-8648-6fa502fad5ac)
 
 
 STEP 4: DEPLOYING MY SIMPLE HTML LANDING PAGE
 
-Navigated to the Apache2 Web Root:
+a. Navigated to the Apache2 Web Root.
 
-Created a folder: mkdir altschool_project_exam
+b. Created a folder: mkdir altschool_project_exam
 
-Cd to the file: cd altschool_project_exam
+c. Cd to the file: cd altschool_project_exam
 
-Copied and installed the GitHub project link: wget https://github.com/inyenepaul/AltSchool-Exam-Project.git
+d. Copied and installed the GitHub project link: wget https://github.com/inyenepaul/AltSchool-Exam-Project.git
 
-Copied the GitHub zip link: wget https://github.com/inyenepaul/AltSchool-Exam-Project/archive/refs/heads/main.zip
+e. Copied the GitHub zip link: wget https://github.com/inyenepaul/AltSchool-Exam-Project/archive/refs/heads/main.zip
 
-Installed unzip: apt install unzip
+f. Installed unzip: apt install unzip
 
-Unzipped the zip file: unzip main.zip
+g. Unzipped the zip file: unzip main.zip
 
-cd to the folder: AltSchool-Exam-Project-main
+h. cd to the folder: AltSchool-Exam-Project-main
 
-Moved the folder to the server: mv * /var/www/html/
+i. Moved the folder to the server: mv * /var/www/html/
 
-Cd to the path: cd /var/www/html/
+j. Cd to the path: cd /var/www/html/
 
-Checked the status of apache2: systemctl status apache2
+k. Checked the status of apache2: systemctl status apache2
 
-Enabled apache2: systemctl enable apache2
+  Enabled apache2: systemctl enable apache2
 
-Started apache2: systemctl start apache2
+  Started apache2: systemctl start apache2
 
-Reloaded the public IP address (54.227.76.174) in the browser: The landing page is displayed
+l. Reloaded the public IP address (54.227.76.174) in the browser: The landing page is displayed
+![HTML landing page with public IP address](https://github.com/user-attachments/assets/7e43e679-a10a-4c8b-b1cd-4a8a9d03075c)
+
+
+BONUS TASK: Configuring HTTPS for your web server using a free SSL certificate (Let’s Encrypt)
+a. I got a domain name from namecheap.com
+   My domain name is inyenepaul.me
+   
+b. In my namecheap dashboard, I clicked on the domain list
+   
+c. In the domain list, I clicked on Advanced DNS and updated the Host records as seen in the figure below
+   ![Namecheap_dashboard](https://github.com/user-attachments/assets/93518d10-ab7a-47e7-ad46-d51abb346d2e)
+
+d. After updating the records, I connected my AWS EC2 instance to the SSH client (Termius)
+
+e. In the Termius terminal, I configured HTTPS for my apache2 server using a free SSL certificate (Let's Encrypt) in the root folder with the commands below:
+   1. sudo apt install certbot python3-certbot-apache -y
+   2. sudo certbot --apache -d inyenepaul.me -d www.inyenepaul.me
+
+f. I typed the URL (https://www.inyenepaul.me) in the browser and the landing page was displayed
+   ![My HTML landing page with HTTPS protocol](https://github.com/user-attachments/assets/cd0f0358-a659-4408-b1e7-34fd0d1a3b57)
+
+   
+
