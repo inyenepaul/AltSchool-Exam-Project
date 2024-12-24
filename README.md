@@ -131,6 +131,7 @@ l. Reloaded the public IP address (54.227.76.174) in the browser: The landing pa
 ![HTML landing page with public IP address](https://github.com/user-attachments/assets/7e43e679-a10a-4c8b-b1cd-4a8a9d03075c)
 
 
+
 BONUS TASK: Configuring HTTPS for your web server using a free SSL certificate (Let’s Encrypt)
 
 a. I got a domain name from namecheap.com
@@ -139,7 +140,7 @@ a. I got a domain name from namecheap.com
    
 b. In my namecheap dashboard, I clicked on the domain list
    
-c. In the domain list, I clicked on Advanced DNS and updated the Host records as seen in the figure below
+c. In the domain list, I clicked on Advanced DNS and updated the Host records with the public IP address (54.227.76.174) as seen in the figure below
    ![Namecheap_dashboard](https://github.com/user-attachments/assets/93518d10-ab7a-47e7-ad46-d51abb346d2e)
 
 d. After updating the records, I connected my AWS EC2 instance to the SSH client (Termius)
