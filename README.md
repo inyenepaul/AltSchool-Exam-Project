@@ -132,7 +132,9 @@ l. Reloaded the public IP address (54.227.76.174) in the browser: The landing pa
 
 
 BONUS TASK: Configuring HTTPS for your web server using a free SSL certificate (Let’s Encrypt)
+
 a. I got a domain name from namecheap.com
+
    My domain name is inyenepaul.me
    
 b. In my namecheap dashboard, I clicked on the domain list
